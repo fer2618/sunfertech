@@ -37,7 +37,7 @@ import {
 // 🔧 CONFIG — personalize aqui
 const BUSINESS_NAME = "SunferTech";
 const CITY = "Rio Claro e região"; // ajuste para sua cidade
-const WHATSAPP_NUMBER = "55XXXXXXXXXXX"; // ex.: 55DDDNUMERO (sem +)
+const WHATSAPP_NUMBER = "5519971344065"; // ex.: 55DDDNUMERO (sem +)
 const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 const AREAS = [
@@ -193,7 +193,7 @@ function QuickQuoteForm() {
 
   const message = useMemo(() => {
     const lines = [
-      `Olá, me chamo ${name}. Quero agendar COLETA.`,
+      `Olá, me chamo ${name}. Quero agendar um Orçamento.`,
       `Telefone: ${phone}`,
       `Bairro: ${area}`,
       `Modelo: ${model}`,
@@ -484,7 +484,7 @@ function Areas() {
                 <div className="flex items-center justify-between"><span>Domingo</span><span>plantão sob consulta</span></div>
               </div>
               <div className="mt-4 border-t border-slate-100 pt-4 text-sm text-slate-600">
-                Endereço sede: a informar. Atendemos somente com agendamento na maior parte dos casos.
+                *Coletas agendadas até 16h (Seg–Sex) e 11h (Sáb) são priorizadas para o mesmo dia, sujeitas à disponibilidade.
               </div>
               <div className="mt-4">
                 <a
@@ -649,7 +649,7 @@ function Footer() {
           <div>
             <p className="mb-2 text-sm font-semibold text-slate-900">Contato</p>
             <ul className="space-y-2 text-sm text-slate-700">
-              <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> WhatsApp: {WHATSAPP_NUMBER.replace("55", "+55 ")}</li>
+              <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> WhatsApp: {WHATSAPP_NUMBER.replace("5519991854940", "+5519991855940 ")}</li>
               <li className="flex items-center gap-2"><MessageCircle className="h-4 w-4" /> Atendimento: Seg–Sáb</li>
             </ul>
           </div>
@@ -665,13 +665,12 @@ function Footer() {
             <p className="mb-2 text-sm font-semibold text-slate-900">Legal</p>
             <ul className="space-y-2 text-sm text-slate-700">
               <li>© {new Date().getFullYear()} {BUSINESS_NAME}</li>
-              <li>CNPJ / MEI (inserir)</li>
               <li>Política de privacidade</li>
             </ul>
           </div>
         </div>
         <div className="mt-8 text-center text-xs text-slate-500">
-          Desenvolvido com ♥ — ajuste cores e logotipo conforme sua marca.
+          Desenvolvido com ♥ 
         </div>
       </div>
     </footer>
