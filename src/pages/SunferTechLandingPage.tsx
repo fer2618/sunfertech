@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import type { Variants, Transition } from "framer-motion";
 import {
   Truck,
   Wrench,
@@ -48,18 +49,20 @@ const AREAS = [
   "Zona Sul",
 ];
 
-const container = {
+const easeOut: Transition["ease"] = [0.16, 1, 0.3, 1];
+
+const container: Variants = {
   hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { staggerChildren: 0.05, duration: 0.5, ease: "easeOut" },
+    transition: { staggerChildren: 0.05, duration: 0.5, ease: easeOut },
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: easeOut } },
 };
 
 function classNames(...c: Array<string | false | undefined>) {
@@ -72,7 +75,6 @@ function NavBar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <a href="#hero" className="flex items-center gap-2">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-amber-500 via-orange-500 to-rose-500 text-white shadow-sm">
               <Wrench className="h-5 w-5" />
             </span>
@@ -691,7 +693,7 @@ function FloatingWhatsApp() {
   );
 }
 
-export default function SunferTechLandingPage(): JSX.Element {
+export default function SunferTechLandingPage() {
   return (
     <div className="min-h-screen scroll-smooth bg-gradient-to-b from-white via-slate-50 to-white text-slate-900">
       <NavBar />
